@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: easyInvent
+server:
+  servlet:
+    context-path: /api/v1.0.0
+
+
+
