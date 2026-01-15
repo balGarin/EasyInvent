@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-bottle-table
+      author: gabanet66
+      changes:
+        - createTable:
+            tableName: bottle
+            columns:
+              - column:
+                 name: bottle_id
+                 type: integer
+                 autoIncrement: true
+                 constraints:
+                   primaryKey: true
+              - column:
+                  name: bottleTitle
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: bottleBarcode
+                  type: varchar(50)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: bottleFullWeight
+                  type: integer
+                  constraints:
+                    nullable: false
+              - column:
+                  name: bottleEmptyWeight
+                  type: integer
+                  constraints:
+                    nullable: false
+              - column:
+                  name: bottleSize
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+
