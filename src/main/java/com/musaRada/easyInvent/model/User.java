@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,6 +13,9 @@ public class User {
     private Long id;
     private String username;
     private String password;
-    private String email;
+    @OneToOne(fetch = FetchType.EAGER)
+
+    @JoinColumn(name = "email_id")
+    private UserEmail email;
 
 }

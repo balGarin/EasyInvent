@@ -6,5 +6,5 @@ import lombok.Data;
 public class BottleDtoOut {
     private String bottleTitle;
     private String bottleSize;
-    private String ml;
+    private Long id;
 }

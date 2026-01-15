@@ -2,26 +2,13 @@ package com.musaRada.easyInvent.dto.in;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
 import lombok.Data;
 
 @Data
-public class BottleDtoIn {
-    @NotBlank
-    @NotNull
+public class BottleUpdateDto {
     private String bottleTitle;
-    @NotBlank
-    @NotNull
     private String bottleBarcode;
-    @NotBlank
-    @NotNull
-    @Positive
     private Double bottleFullWeight;
-    @NotBlank
-    @NotNull
-    @Positive
     private Double bottleEmptyWeight;
-    @NotBlank
-    @NotNull
     private String bottleSize;
 }

@@ -19,11 +19,12 @@ databaseChangeLog:
                     nullable: false
                     unique: true
               - column:
-                  name: email
-                  type: varchar(100)
+                  name: email_id
+                  type: integer
                   constraints:
-                    nullable: false
-                    unique: true
+                    foreignKeyName: users_email_fk
+                    referencedTableName: emails
+                    referencedColumnNames: email_id
               - column:
                   name: password
                   type: varchar(100)

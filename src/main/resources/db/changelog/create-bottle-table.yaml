@@ -4,7 +4,7 @@ databaseChangeLog:
       author: gabanet66
       changes:
         - createTable:
-            tableName: bottle
+            tableName: bottles
             columns:
               - column:
                  name: bottle_id
@@ -35,6 +35,11 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: bottleSize
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
                   type: varchar(10)
                   constraints:
                     nullable: false

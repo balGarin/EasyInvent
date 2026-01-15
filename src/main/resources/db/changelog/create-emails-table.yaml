@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-emails-table
+      author: gabanet66
+      changes:
+        - createTable:
+            tableName: emails
+            columns:
+              - column:
+                  name: email_id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: email
+                  type: varchar(50)
+                  constraints:
+                    unique: true
+                    nullable: false
