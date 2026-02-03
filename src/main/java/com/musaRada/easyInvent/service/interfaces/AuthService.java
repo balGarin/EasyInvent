@@ -2,13 +2,11 @@ package com.musaRada.easyInvent.service.interfaces;
 
 import com.musaRada.easyInvent.dto.in.UserDtoSingIn;
 import com.musaRada.easyInvent.dto.in.UserDtoSingUp;
-import com.musaRada.easyInvent.model.User;
-
-import java.util.List;
+import com.musaRada.easyInvent.dto.out.UserDtoOut;
 
 public interface AuthService {
 
-     User singUp(UserDtoSingUp userDtoSingUp);
+     UserDtoOut singUp(UserDtoSingUp userDtoSingUp);
 
     String singIn(UserDtoSingIn userDtoSingIn);
 

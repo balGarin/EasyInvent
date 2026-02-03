@@ -1,10 +1,10 @@
 package com.musaRada.easyInvent.dto.out;
 
+import jakarta.persistence.Column;
 import lombok.Data;
 
 @Data
-public class UserDtoOut {
+public class UserEmailDtoOut {
     private Long id;
-    private String username;
     private String email;
 }

@@ -2,7 +2,9 @@ package com.musaRada.easyInvent.service.services;
 
 import com.musaRada.easyInvent.dto.in.UserDtoSingIn;
 import com.musaRada.easyInvent.dto.in.UserDtoSingUp;
+import com.musaRada.easyInvent.dto.out.UserDtoOut;
 import com.musaRada.easyInvent.exception.AuthException;
+import com.musaRada.easyInvent.mapper.UserMapper;
 import com.musaRada.easyInvent.model.User;
 import com.musaRada.easyInvent.model.UserEmail;
 
@@ -18,9 +20,10 @@ public class AuthServiceWithoutSecurity implements AuthService {
 
     private final UserRepository userRepository;
     private final UserEmailRepository userEmailRepository;
+    private final UserMapper userMapper;
 
     @Override
-    public User singUp(UserDtoSingUp userDtoSingUp) {
+    public UserDtoOut singUp(UserDtoSingUp userDtoSingUp) {
 
         User user = new User();
         UserEmail userEmail = userEmailRepository.findByEmail(userDtoSingUp.getEmail())
@@ -29,7 +32,7 @@ public class AuthServiceWithoutSecurity implements AuthService {
         user.setUsername(userDtoSingUp.getUsername());
         user.setPassword(userDtoSingUp.getPassword());
         user=userRepository.save(user);
-        return  user;
+        return  userMapper.toDto(user);
 
     }
 

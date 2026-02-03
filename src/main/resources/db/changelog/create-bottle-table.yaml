@@ -13,29 +13,27 @@ databaseChangeLog:
                  constraints:
                    primaryKey: true
               - column:
-                  name: bottleTitle
+                  name: bottle_title
                   type: varchar(100)
                   constraints:
                     nullable: false
               - column:
-                  name: bottleBarcode
+                  name: bottle_barcode
                   type: varchar(50)
                   constraints:
                     unique: true
                     nullable: false
               - column:
-                  name: bottleFullWeight
-                  type: integer
+                  name: bottle_full_weight
+                  type: double
+              - column:
+                  name: bottle_empty_weight
+                  type: double
                   constraints:
                     nullable: false
               - column:
-                  name: bottleEmptyWeight
-                  type: integer
-                  constraints:
-                    nullable: false
-              - column:
-                  name: bottleSize
-                  type: varchar(10)
+                  name: bottle_size
+                  type: double
                   constraints:
                     nullable: false
               - column:

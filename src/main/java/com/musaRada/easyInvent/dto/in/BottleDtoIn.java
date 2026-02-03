@@ -1,27 +1,23 @@
 package com.musaRada.easyInvent.dto.in;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.*;
 import lombok.Data;
 
 @Data
 public class BottleDtoIn {
-    @NotBlank
-    @NotNull
+    @NotBlank(message = "Поле не может быть пустым!")
+    @NotNull(message = "Поле не может быть пустым!")
     private String bottleTitle;
-    @NotBlank
-    @NotNull
+    @NotBlank(message = "Поле не может быть пустым!")
+    @NotNull(message = "Поле не может быть пустым!")
+    @Pattern(regexp = "^[0-9]+?",message = "Только цифры")
     private String bottleBarcode;
-    @NotBlank
-    @NotNull
-    @Positive
-    private Double bottleFullWeight;
-    @NotBlank
-    @NotNull
-    @Positive
-    private Double bottleEmptyWeight;
-    @NotBlank
-    @NotNull
-    private String bottleSize;
+    @Pattern(regexp = "^[0-9]+([\\.,][0-9]+)?",message = "Только цифры")
+    private String bottleFullWeight;
+    @NotNull(message = "Поле не может быть пустым!")
+    @Pattern(regexp = "^[0-9]+([\\.,][0-9]+)?",message = "Только цифры")
+    private String bottleEmptyWeight;
+    @NotNull(message = "Поле не может быть пустым!")
+    @Pattern(regexp = "^[0-9]+([\\.,][0-9]+)?",message = "Только цифры")
+    private String bottleSize ;
 }

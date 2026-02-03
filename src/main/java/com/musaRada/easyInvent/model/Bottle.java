@@ -12,11 +12,16 @@ public class Bottle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "bottle_id")
     private Long id;
+    @Column(name ="bottle_title")
     private String bottleTitle;
+    @Column(name ="bottle_barcode")
     private String bottleBarcode;
+    @Column(name = "bottle_full_weight")
     private Double bottleFullWeight;
+    @Column(name = "bottle_empty_weight")
     private Double bottleEmptyWeight;
-    private String bottleSize;
+    @Column(name = "bottle_size")
+    private Double bottleSize;
     @Enumerated(EnumType.STRING)
     private BottleStatus status = BottleStatus.WAITING;
 }

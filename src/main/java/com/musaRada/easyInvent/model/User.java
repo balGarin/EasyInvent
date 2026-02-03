@@ -13,8 +13,7 @@ public class User {
     private Long id;
     private String username;
     private String password;
-    @OneToOne(fetch = FetchType.EAGER)
-
+    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "email_id")
     private UserEmail email;
 
